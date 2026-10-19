@@ -1,0 +1,32 @@
+:root{--pink:#e8c3dc;--ink:#3a2a35;--hand:'Gochi Hand','Comic Sans MS',cursive}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;overflow-x:hidden}
+body{font-family:var(--hand);color:var(--ink);background-color:#f6ecc0;
+background-image:
+radial-gradient(circle at 12% 18%,#e58aa3 0 2.5px,transparent 3px),radial-gradient(circle at 63% 9%,#7fa6e0 0 2.5px,transparent 3px),
+radial-gradient(circle at 38% 72%,#e58aa3 0 2.5px,transparent 3px),radial-gradient(circle at 85% 55%,#7fa6e0 0 2.5px,transparent 3px),
+repeating-linear-gradient(90deg,#f7e9a8 0 34px,#fbf6e2 34px 68px);
+background-size:140px 140px,170px 170px,150px 150px,190px 190px,auto}
+#app{min-height:100%;display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top)) 16px max(16px,env(safe-area-inset-bottom))}
+.screen{width:100%;max-width:520px;display:flex;flex-direction:column;align-items:center;gap:22px;animation:in .35s ease-out}
+@keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.pill{background:var(--pink);border:1.5px solid var(--ink);border-radius:14px;padding:12px 22px;font-size:clamp(22px,6vw,32px);text-align:center;line-height:1.15;max-width:100%}
+.art{width:min(52vw,210px);aspect-ratio:1;display:grid;place-items:center;animation:bob 2.6s ease-in-out infinite}
+.art img,.art svg{width:100%;height:100%;object-fit:contain}
+@keyframes bob{50%{transform:translateY(-6px)}}
+.btns{display:flex;gap:14px;width:100%;justify-content:center}
+.btn{flex:1;max-width:220px;min-height:52px;background:var(--pink);border:1.5px solid var(--ink);border-radius:26px;font:inherit;font-size:clamp(17px,4.6vw,21px);color:var(--ink);padding:8px 14px;cursor:pointer;line-height:1.1;transition:transform .12s}
+.btn:active{transform:scale(.94)}
+.btn[disabled]{cursor:not-allowed}
+.letter{flex-direction:row;align-items:center;gap:14px}
+.photo{flex:0 0 38%;aspect-ratio:1;display:grid;place-items:center;background:radial-gradient(#f4c6d6 0 30%,#f8dfe6 31%);clip-path:polygon(50% 0,61% 28%,92% 18%,74% 45%,100% 60%,68% 68%,70% 100%,50% 78%,30% 100%,32% 68%,0 60%,26% 45%,8% 18%,39% 28%);font-size:46px}
+.note{flex:1;background:#eec1dc;padding:22px 16px;min-height:300px;font-size:clamp(14px,3.9vw,18px);line-height:1.25;text-align:center;box-shadow:0 2px 6px #0002;position:relative}
+.note::before,.note::after{content:"";position:absolute;width:70px;height:20px;background:#c9c9d3aa;top:-8px;right:-14px;transform:rotate(30deg)}
+.note::after{top:auto;bottom:-8px;left:-14px;right:auto}
+.end h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(26px,7.5vw,40px);text-align:center;font-weight:700}
+.end .sign{width:min(70vw,260px)}
+.hearts span{position:absolute;color:#c58ae0;animation:fl 3s ease-in infinite}
+@keyframes fl{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(-90px)}}
+@media(max-width:480px){.letter{flex-direction:column}.photo{flex-basis:auto;width:50%}}
+.wrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:16px}
+.cont{flex:none;width:200px;animation:in .35s ease-out}
